@@ -14,12 +14,32 @@ header {
 
 nav {
     margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.content{
+    margin: 20px;
+    padding: 20px 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -27,7 +47,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
