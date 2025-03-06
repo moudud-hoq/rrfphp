@@ -10,24 +10,23 @@
 
 <body>
 
-    <!-- <?php echo var_dump(value: $_SERVER['REQUEST_URI']); ?>
-    <?php
-    $uri = $_SERVER['REQUEST_URI'];
-    $path = parse_url($uri, PHP_URL_PATH);
-    echo $path;
-    ?> -->
+
 
     <?php
+    // Active link চেক করার ফাংশন
     function is_active($check)
     {
-        $requested_uri = $_SERVER['REQUEST_URI'];
-
-        $search = strpos($requested_uri, $check);
-        if ($search !== false) {
-            echo 'active';
-        }
+        return (strpos($_SERVER['REQUEST_URI'], $check) !== false) ? 'active' : '';
     }
 
+    // মেনু লিংকের অ্যারে
+    $nav_links = [
+        "index.php" => "Home",
+        "about.php" => "About",
+        "contact.php" => "Contact",
+        "services.php" => "Services",
+        "portfolio.php" => "Portfolio"
+    ];
     ?>
 
     <header>
@@ -35,11 +34,8 @@
         <p>This is a simple website structure with some CSS and HTML.</p>
     </header>
     <nav>
-        <a class="<?php echo is_active('index'); ?>" href="index.php">Home</a>
-        <a class="<?php echo is_active('about'); ?>"  href="about.php">About</a>
-        <a class="<?php echo is_active('contact'); ?>"  href="contact">Contact</a>
-        <a class="<?php echo is_active('services'); ?>"  href="services">Services</a>
-        <a class="<?php echo is_active('portfolio'); ?>"  href="portfolio">Portfolio</a>
+        <?php foreach ($nav_links as $link => $title) : ?>
+            <a class="<?php echo is_active($link); ?>" href="<?php echo $link; ?>"><?php echo $title; ?></a>
+        <?php endforeach; ?>
     </nav>
-
     <div class="content">

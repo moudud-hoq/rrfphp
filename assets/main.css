@@ -33,7 +33,12 @@ nav a:hover, nav a.active{
     text-decoration: underline;
 }
 
-
+/* Active নেভিগেশন লিংকের জন্য CSS */
+.active {
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 
 .content{
